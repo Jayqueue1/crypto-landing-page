@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoZ | Buy, sell, trade and earn cryptocurrencies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- navbar -->
+    <header class="navbar">
+        <div class="container navbar-inner">
+            <a href="#" class="logo" aria-label="CryptoZ home">
+                <img src="images/cryptoz logo.png" alt="">
+                <span class="logo-text">Crypto<span class="logo-z">Z</span></span>
+            </a>
+
+            <nav class="nav-links" aria-label="Main">
+                <a href="#products">Products</a>
+                <a href="#price">Price</a>
+                <a href="#learn">Learn</a>
+                <a href="#support">Support</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="#" class="signin">Sign in</a>
+                <button type="button" class="btn btn--primary btn--sm">Get started</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- hero -->
+        <section class="hero">
+            <div class="container hero-inner">
+
+                <div class="hero-content">
+                    <h1>Your all-in-one platform to buy, sell, trade, and earn Cryptocurrencies</h1>
+
+                    <p>Open a free account in minutes right from your phone and make your money go further</p>
+
+                    <form class="hero-form" action="#" method="post">
+                        <label for="hero-email" class="visually-hidden">Email address</label>
+                        <input id="hero-email" type="email" name="email" placeholder="Email Address...." autocomplete="email" required>
+                        <button type="submit" class="btn btn--primary">Get started</button>
+                    </form>
+                </div>
+
+                <div class="converter" id="converter">
+                    
+                    <img class="coin coin--btc" src="images/Bitcoin.png" alt="">
+                    <img class="coin coin--eth" src="images/Ethereum.png" alt="" onerror="this.remove()">
+
+                    <h2>Currency Converter</h2>
+
+                    <div class="field">
+                        <label for="amount">Amount</label>
+                        <div class="input-row">
+                            <select id="from-currency" aria-label="Currency to convert from">
+                                <option>GBP</option>
+                                <option>USD</option>
+                                <option>EUR</option>
+                                <option>AUD</option>
+                                <option>BTC</option>
+                            </select>
+                            <input id="amount" type="number" value="1" min="0" step="any">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="converted">Converted to</label>
+                        <div class="input-row">
+                            <select id="to-currency" aria-label="Currency to convert to">
+                                <option>AUD</option>
+                                <option>USD</option>
+                                <option>EUR</option>
+                                <option>GBP</option>
+                                <option>BTC</option>
+                            </select>
+                            <input id="converted" type="text" readonly>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="rate-date">Date</label>
+                        <div class="input-row">
+                            <input id="rate-date" type="date">
+                        </div>
+                    </div>
+
+                    <div class="currency-tabs" role="group" aria-label="Quick select target currency">
+                        <button type="button" data-currency="EUR">EUR</button>
+                        <button type="button" data-currency="GBP">GBP</button>
+                        <button type="button" data-currency="BTC">BTC</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- partners -->
+        <section class="partners">
+            <div class="container">
+                <img src="images/coins.png" alt="Binance, Coinbase, Bitcoin, Tether and BitMEX logos">
+            </div>
+        </section>
+
+        <!-- stats -->
+        <section class="container">
+            <div class="stats">
+                <div class="stat">
+                    <h2>99k</h2>
+                    <p>People have joined</p>
+                </div>
+                <div class="stat">
+                    <h2>50k</h2>
+                    <p>VVIP users have joined</p>
+                </div>
+                <div class="stat">
+                    <h2>100+</h2>
+                    <p>Big Companies have joined</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- trusted platform -->
+        <section class="trusted">
+            <div class="trusted-inner">
+
+                <div class="trusted-content">
+                    <h2>The Most Trusted Cryptocurrency Platform</h2>
+
+                    <ol class="features">
+                        <li class="feature">
+                            <span class="number" aria-hidden="true">01</span>
+                            <div class="feature-details">
+                                <h3>Sync between platforms</h3>
+                                <p>No matter if you're using our web interface or mobile app &mdash; your data is always synced. Just one account for all our services.</p>
+                            </div>
+                        </li>
+
+                        <li class="feature">
+                            <span class="number" aria-hidden="true">02</span>
+                            <div class="feature-details">
+                                <h3>More focus, less clutter</h3>
+                                <p>No ads, just the crypto and content you love.</p>
+                            </div>
+                        </li>
+
+                        <li class="feature">
+                            <span class="number" aria-hidden="true">03</span>
+                            <div class="feature-details">
+                                <h3>Security by default</h3>
+                                <p>Enable privacy mode and app locking to protect your data.</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="trusted-image">
+                    <img src="images/Phones.png" alt="CryptoZ app screens on mobile phones">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- cards + steps -->
+        <div class="band">
+
+            <section class="container feature-cards" aria-label="Highlights">
+                <article class="fcard fcard--navy">
+                    <img src="images/Frame navy.png" alt="Create portfolio today. Buy and sell popular digital currencies, keep track of them in the one place. Has a variety of features that make it the best place to start trading.">
+                </article>
+
+                <article class="fcard fcard--yellow">
+                    <img src="images/Frame yellow.png" alt="Lightning-Fast Crypto Trading. The Exchange supports USD, EUR, and GBP. Invest in cryptocurrency slowly over time by scheduling buys daily, weekly, or monthly.">
+                </article>
+
+                <article class="fcard fcard--pink">
+                    <img src="images/Frame pink.png" alt="Security From Day One. Safety, security and compliance. Buy and sell popular digital currencies, keep track of them in one place.">
+                </article>
+            </section>
+
+            <section class="container steps" aria-labelledby="steps-title">
+                <h2 id="steps-title">Get Started in Just Few Minutes</h2>
+                <p class="steps-intro">Has a variety of features that make it the best place to start trading</p>
+
+                <ol class="steps-grid">
+                    <li class="step">
+                        <svg class="step-icon" viewBox="0 0 160 110" aria-hidden="true">
+                            <path d="M34 34 L124 28 L128 74 L38 80 Z" fill="#fff" stroke="#c9c9d6" stroke-width="2"/>
+                            <rect x="30" y="40" width="100" height="56" fill="#fff" stroke="#6b6b7a" stroke-width="2"/>
+                            <rect x="40" y="50" width="80" height="36" fill="#eef0ff"/>
+                            <rect x="53" y="59" width="12" height="14" rx="2" fill="#4b52e8"/>
+                            <circle cx="102" cy="63" r="5" fill="#7b86f5"/>
+                            <path d="M96 78 a6 6 0 0 1 12 0 Z" fill="#7b86f5"/>
+                            <path d="M76 18 l10 -10 l10 10 l-10 6 Z" fill="#7b86f5"/>
+                            <path d="M12 82 l8 -8 l8 8 l-8 8 Z" fill="#7b86f5"/>
+                        </svg>
+                        <h3>Sign Up</h3>
+                        <p>Buy Bitcoin or Ethereum, then securely store it in your wallet or send it easily to friends</p>
+                    </li>
+
+                    <li class="step">
+                        <svg class="step-icon" viewBox="0 0 160 110" aria-hidden="true">
+                            <rect x="56" y="4" width="48" height="100" rx="9" fill="#fff" stroke="#111" stroke-width="3"/>
+                            <circle cx="68" cy="22" r="6" fill="#eceef8"/>
+                            <rect x="78" y="19" width="16" height="6" rx="3" fill="#eceef8"/>
+                            <circle cx="68" cy="84" r="6" fill="#eceef8"/>
+                            <rect x="78" y="81" width="16" height="6" rx="3" fill="#eceef8"/>
+                            <path d="M52 22 a22 22 0 0 0 4 30 l0 -30 Z" fill="#7b86f5"/>
+                            <rect x="38" y="46" width="84" height="22" fill="#fff" stroke="#c9c9d6" stroke-width="2"/>
+                            <circle cx="50" cy="57" r="6" fill="#f2b84b"/>
+                            <rect x="62" y="53" width="22" height="3.5" rx="1.7" fill="#4b52e8"/>
+                            <rect x="62" y="60" width="36" height="3.5" rx="1.7" fill="#c9c9d6"/>
+                            <path d="M112 96 c10 -6 18 -20 14 -34 c-8 10 -14 18 -14 34 Z" fill="#7b86f5"/>
+                        </svg>
+                        <h3>Fund</h3>
+                        <p>Choose your preferred payment method, such as bank transfer or credit card, to top up your wallet</p>
+                    </li>
+
+                    <li class="step">
+                        <svg class="step-icon" viewBox="0 0 160 110" aria-hidden="true">
+                            <rect x="44" y="46" width="72" height="60" fill="#fff" stroke="#6b6b7a" stroke-width="2"/>
+                            <rect x="38" y="36" width="84" height="12" fill="#fff" stroke="#6b6b7a" stroke-width="2"/>
+                            <rect x="73" y="36" width="14" height="70" fill="#7b86f5"/>
+                            <path d="M80 36 C60 36 62 8 80 22 C98 8 100 36 80 36 Z" fill="#7b86f5"/>
+                            <circle cx="80" cy="76" r="16" fill="#f2b84b"/>
+                            <text x="80" y="83" text-anchor="middle" font-size="20" font-weight="700" fill="#fff" font-family="Arial, sans-serif">$</text>
+                        </svg>
+                        <h3>Buy Crypto</h3>
+                        <p>Sign up for a free wallet on web, iOS or Android and follow our easy process to set up your profile</p>
+                    </li>
+                </ol>
+            </section>
+
+        </div>
+
+        <!-- testimonials -->
+        <section class="testimonials" aria-labelledby="testimonials-title">
+            <div class="container">
+                <h2 id="testimonials-title">What people are saying</h2>
+
+                <div class="tgrid">
+
+                    <div class="tcol">
+                        <article class="tcard">
+                            <header>
+                                <span class="avatar a-grey" aria-hidden="true">JD</span>
+                                <div><h3>John doe</h3><p>CEO Motion Design Agency</p></div>
+                            </header>
+                            <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&rdquo;</blockquote>
+                        </article>
+                        <article class="tcard">
+                            <header>
+                                <span class="avatar a-peach" aria-hidden="true">JD</span>
+                                <div><h3>John doe</h3><p>CEO Motion Design Agency</p></div>
+                            </header>
+                            <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&rdquo;</blockquote>
+                        </article>
+                        <article class="tcard">
+                            <header>
+                                <span class="avatar a-green" aria-hidden="true">JD</span>
+                                <div><h3>John doe</h3><p>CEO Motion Design Agency</p></div>
+                            </header>
+                            <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&rdquo;</blockquote>
+                        </article>
+                    </div>
+
+                    <div class="tcol">
+                        <article class="tcard">
+                            <header>
+                                <span class="avatar a-lilac" aria-hidden="true">JD</span>
+                                <div><h3>John doe</h3><p>CEO Motion Design Agency</p></div>
+                            </header>
+                            <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&rdquo;</blockquote>
+                        </article>
+                        <article class="tcard">
+                            <header>
+                                <span class="avatar a-green" aria-hidden="true">JD</span>
+                                <div><h3>John doe</h3><p>CEO Motion Design Agency</p></div>
+                            </header>
+                            <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&rdquo;</blockquote>
+                        </article>
+                        <article class="tcard">
+                            <header>
+                                <span class="avatar a-lilac" aria-hidden="true">JD</span>
+                                <div><h3>John doe</h3><p>CEO Motion Design Agency</p></div>
+                            </header>
+                            <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&rdquo;</blockquote>
+                        </article>
+                    </div>
+
+                    <div class="tcol">
+                        <article class="tcard">
+                            <header>
+                                <span class="avatar a-grey" aria-hidden="true">JD</span>
+                                <div><h3>John doe</h3><p>CEO Motion Design Agency</p></div>
+                            </header>
+                            <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.&rdquo;</blockquote>
+                        </article>
+                        <article class="tcard">
+                            <header>
+                                <span class="avatar a-blue" aria-hidden="true">JD</span>
+                                <div><h3>John doe</h3><p>CEO Motion Design Agency</p></div>
+                            </header>
+                            <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&rdquo;</blockquote>
+                        </article>
+                        <article class="tcard">
+                            <header>
+                                <span class="avatar a-lilac" aria-hidden="true">JD</span>
+                                <div><h3>John doe</h3><p>CEO Motion Design Agency</p></div>
+                            </header>
+                            <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&rdquo;</blockquote>
+                        </article>
+                        <article class="tcard">
+                            <header>
+                                <span class="avatar a-lilac" aria-hidden="true">JD</span>
+                                <div><h3>John doe</h3><p>CEO Motion Design Agency</p></div>
+                            </header>
+                            <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&rdquo;</blockquote>
+                        </article>
+                    </div>
+
+                    <div class="tcol">
+                        <article class="tcard">
+                            <header>
+                                <span class="avatar a-lilac" aria-hidden="true">JD</span>
+                                <div><h3>John doe</h3><p>CEO Motion Design Agency</p></div>
+                            </header>
+                            <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&rdquo;</blockquote>
+                        </article>
+                        <article class="tcard">
+                            <header>
+                                <span class="avatar a-blue" aria-hidden="true">JD</span>
+                                <div><h3>John doe</h3><p>CEO Motion Design Agency</p></div>
+                            </header>
+                            <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&rdquo;</blockquote>
+                        </article>
+                        <article class="tcard">
+                            <header>
+                                <span class="avatar a-blue" aria-hidden="true">JD</span>
+                                <div><h3>John doe</h3><p>CEO Motion Design Agency</p></div>
+                            </header>
+                            <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&rdquo;</blockquote>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- call to action banner -->
+        <section class="container cta" aria-labelledby="cta-title">
+            <div class="cta-banner">
+
+                <div class="cta-bg" aria-hidden="true">
+                    <svg viewBox="0 0 1000 273" preserveAspectRatio="xMaxYMax slice" focusable="false">
+                        <defs>
+                            <pattern id="cta-dots" width="17" height="17" patternUnits="userSpaceOnUse">
+                                <circle cx="2" cy="2" r="1.6" fill="#8ba1f3"/>
+                            </pattern>
+                        </defs>
+                        <circle cx="872" cy="353" r="350" fill="#6982e8"/>
+                        <rect x="717" y="118" width="170" height="150" fill="url(#cta-dots)"/>
+                        <circle cx="500" cy="298" r="178" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="1"/>
+                        <circle cx="1010" cy="95" r="105" fill="none" stroke="#fff" stroke-opacity="0.45" stroke-width="1"/>
+                    </svg>
+                </div>
+
+                <div class="cta-content">
+                    <h2 id="cta-title">Take your first step into safe,<br class="br-wide"> secure crypto investing</h2>
+                    <button type="button" class="btn btn--white">Get started</button>
+                </div>
+
+                <svg class="cta-coin cta-coin--btc" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+                    <circle cx="50" cy="50" r="49" fill="#dd973b"/>
+                    <g transform="rotate(14 50 50)" fill="#fff">
+                        <rect x="41" y="17" width="5" height="12"/>
+                        <rect x="54" y="17" width="5" height="12"/>
+                        <rect x="41" y="71" width="5" height="12"/>
+                        <rect x="54" y="71" width="5" height="12"/>
+                        <text x="50" y="68" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="60">B</text>
+                    </g>
+                </svg>
+
+                <svg class="cta-coin cta-coin--eth" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+                    <circle cx="50" cy="50" r="49" fill="#fff"/>
+                    <polygon points="50,13 28,50 50,40" fill="#8c8c8c"/>
+                    <polygon points="50,13 72,50 50,40" fill="#3a3a3a"/>
+                    <polygon points="28,50 50,40 72,50 50,61" fill="#1c1c1c"/>
+                    <polygon points="28,56 50,67 50,87" fill="#8c8c8c"/>
+                    <polygon points="72,56 50,67 50,87" fill="#3a3a3a"/>
+                </svg>
+
+                <svg class="cta-coin cta-coin--luna" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+                    <circle cx="50" cy="50" r="49" fill="#20284f"/>
+                    <circle cx="48" cy="54" r="26" fill="#f0d65a"/>
+                    <path d="M26 44 C 40 28, 66 30, 74 44 C 58 38, 40 42, 26 44 Z" fill="#20284f"/>
+                    <path d="M66 36 L78 50 L72 56 Z" fill="#e8803a"/>
+                </svg>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer-panel">
+
+            <svg class="footer-lines" viewBox="0 0 1026 672" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                <g fill="none" stroke="#fff" stroke-opacity="0.12" stroke-width="1">
+                    <ellipse cx="660" cy="1000" rx="560" ry="235" transform="rotate(-8 660 1000)"/>
+                    <path d="M-20 480 C 220 330 520 150 1046 60"/>
+                    <path d="M-20 640 C 260 430 640 250 1046 180"/>
+                    <path d="M520 20 C 700 90 900 130 1046 140"/>
+                    <path d="M-20 300 C 150 200 330 120 520 60"/>
+                </g>
+            </svg>
+
+            <nav class="footer-nav" aria-label="Footer">
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Student</a></li>
+                        <li><a href="#">Security</a></li>
+                        <li><a href="#">Trust and Safety</a></li>
+                        <li><a href="#">Newsroom</a></li>
+                        <li><a href="#">Videos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Learn</h3>
+                    <ul>
+                        <li><a href="#">What&rsquo;s Trending</a></li>
+                        <li><a href="#">Product News</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">University</a></li>
+                        <li><a href="#">Research</a></li>
+                        <li><a href="#">Market Updates</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#">Stock &amp; Fund</a></li>
+                        <li><a href="#">Cash Card</a></li>
+                        <li><a href="#">Crypto</a></li>
+                        <li><a href="#">Options</a></li>
+                        <li><a href="#">Gold</a></li>
+                        <li><a href="#">Learn Snacks</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">System Status</a></li>
+                        <li><a href="#">Areas of Availability</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Prices</a></li>
+                        <li><a href="#">Site Widgets</a></li>
+                        <li><a href="#">Tax</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="footer-bottom">
+                <p class="footer-tagline">Did you know you can do more with crypto while on the go?</p>
+
+                <a href="#" class="footer-logo" aria-label="CryptoZ home">
+                    <img src="images/cryptoz logo.png" alt="">
+                    <span>CryptoZ</span>
+                </a>
+
+                <p class="footer-copy">&copy; Design by Amarachi Iwueze. All rights reserved.</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        // placeholder rates per 1 USD, swap for a real exchange-rate API
+        const RATES = { USD: 1, GBP: 0.76, EUR: 0.86, AUD: 1.53, BTC: 0.000011 };
+
+        const amountEl = document.getElementById('amount');
+        const fromEl = document.getElementById('from-currency');
+        const toEl = document.getElementById('to-currency');
+        const outEl = document.getElementById('converted');
+        const dateEl = document.getElementById('rate-date');
+
+        dateEl.value = new Date().toISOString().slice(0, 10);
+
+        function convert() {
+            const amount = parseFloat(amountEl.value);
+            if (Number.isNaN(amount)) { outEl.value = ''; return; }
+
+            const result = (amount / RATES[fromEl.value]) * RATES[toEl.value];
+
+            outEl.value = result.toLocaleString(undefined, {
+                maximumFractionDigits: toEl.value === 'BTC' ? 8 : 4
+            });
+        }
+
+        [amountEl, fromEl, toEl].forEach(el => el.addEventListener('input', convert));
+
+        document.querySelectorAll('.currency-tabs button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                toEl.value = btn.dataset.currency;
+                convert();
+            });
+        });
+
+        convert();
+    </script>
+</body>
+</html>

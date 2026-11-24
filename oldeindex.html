@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoZ | Buy, sell, trade and earn cryptocurrencies</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container navbar-inner">
+            <a href="#" class="logo" aria-label="CryptoZ home">
+                <img src="images/cryptoz logo.png" alt="">
+                <span class="logo-text">Crypto<span class="logo-z">Z</span></span>
+            </a>
+
+            <nav class="nav-links" aria-label="Main">
+                <a href="#products">Products</a>
+                <a href="#price">Price</a>
+                <a href="#learn">Learn</a>
+                <a href="#support">Support</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="#" class="signin">Sign in</a>
+                <button type="button" class="btn btn--primary">Get started</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container hero-inner">
+
+                <div class="hero-content">
+                    <h1>Your all-in-one platform to buy, sell, trade and earn Cryptocurrencies</h1>
+
+                    <p>Open a free account in minutes right from your phone and make your money go further</p>
+
+                    <form class="hero-form" action="#" method="post">
+                        <label for="hero-email" class="visually-hidden">Email address</label>
+                        <input id="hero-email" type="email" name="email" placeholder="Email address" autocomplete="email" required>
+                        <button type="submit" class="btn btn--light">Get started</button>
+                    </form>
+                </div>
+
+                <div class="converter" id="converter">
+                    <img class="converter-coin" src="images/Bitcoin.png" alt="">
+
+                    <h2>Currency Converter</h2>
+
+                    <div class="field">
+                        <label for="amount">Amount</label>
+                        <div class="input-row">
+                            <select id="from-currency" aria-label="Currency to convert from">
+                                <option>GBP</option>
+                                <option>USD</option>
+                                <option>EUR</option>
+                                <option>AUD</option>
+                                <option>BTC</option>
+                            </select>
+                            <input id="amount" type="number" value="1" min="0" step="any">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="converted">Converted to</label>
+                        <div class="input-row">
+                            <select id="to-currency" aria-label="Currency to convert to">
+                                <option>AUD</option>
+                                <option>USD</option>
+                                <option>EUR</option>
+                                <option>GBP</option>
+                                <option>BTC</option>
+                            </select>
+                            <input id="converted" type="text" readonly>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="rate-date">Date</label>
+                        <div class="input-row">
+                            <input id="rate-date" type="date">
+                        </div>
+                    </div>
+
+                    <div class="currency-tabs" role="group" aria-label="Quick select target currency">
+                        <button type="button" data-currency="EUR">EUR</button>
+                        <button type="button" data-currency="GBP">GBP</button>
+                        <button type="button" data-currency="BTC">BTC</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PARTNERS -->
+        <section class="partners">
+            <div class="container">
+                <p class="partners-title">Supported exchanges and assets</p>
+                <img src="images/coins.png" alt="Binance, Coinbase, Bitcoin, Tether and BitMEX logos">
+            </div>
+        </section>
+
+        <!-- STATS -->
+        <section class="container">
+            <div class="stats">
+                <div class="stat">
+                    <h2>99k</h2>
+                    <p>People have joined</p>
+                </div>
+                <div class="stat">
+                    <h2>50k</h2>
+                    <p>VVIP users have joined</p>
+                </div>
+                <div class="stat">
+                    <h2>100+</h2>
+                    <p>Big companies have joined</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRUSTED PLATFORM -->
+        <section class="trusted">
+            <div class="container trusted-inner">
+
+                <div class="trusted-content">
+                    <h2>The Most Trusted Cryptocurrency Platform</h2>
+
+                    <ol class="features">
+                        <li class="feature">
+                            <span class="number" aria-hidden="true">01</span>
+                            <div class="feature-details">
+                                <h3>Sync between platforms</h3>
+                                <p>No matter if you're using our web interface or mobile app, your data is always synced.</p>
+                            </div>
+                        </li>
+
+                        <li class="feature">
+                            <span class="number" aria-hidden="true">02</span>
+                            <div class="feature-details">
+                                <h3>More focus, less clutter</h3>
+                                <p>No ads, just the crypto and content you love.</p>
+                            </div>
+                        </li>
+
+                        <li class="feature">
+                            <span class="number" aria-hidden="true">03</span>
+                            <div class="feature-details">
+                                <h3>Security by default</h3>
+                                <p>Enable privacy mode and app locking to protect your data.</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="trusted-image">
+                    <img src="images/Phones.png" alt="CryptoZ app screens on mobile phones">
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        /* Converter demo.
+           These rates are PLACEHOLDERS (units per 1 USD) so the widget works offline.
+           Replace getRate() with a call to a real exchange-rate API for live/historical data. */
+        const RATES = { USD: 1, GBP: 0.76, EUR: 0.86, AUD: 1.53, BTC: 0.000011 };
+
+        const amountEl = document.getElementById('amount');
+        const fromEl = document.getElementById('from-currency');
+        const toEl = document.getElementById('to-currency');
+        const outEl = document.getElementById('converted');
+
+        function convert() {
+            const amount = parseFloat(amountEl.value);
+            if (Number.isNaN(amount)) { outEl.value = ''; return; }
+
+            const from = fromEl.value;
+            const to = toEl.value;
+            const result = (amount / RATES[from]) * RATES[to];
+
+            outEl.value = result.toLocaleString(undefined, {
+                maximumFractionDigits: to === 'BTC' ? 8 : 4
+            });
+        }
+
+        [amountEl, fromEl, toEl].forEach(el => el.addEventListener('input', convert));
+
+        document.querySelectorAll('.currency-tabs button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                toEl.value = btn.dataset.currency;
+                convert();
+            });
+        });
+
+        convert();
+    </script>
+</body>
+</html>

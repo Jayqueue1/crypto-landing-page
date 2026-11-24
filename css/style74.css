@@ -1,0 +1,748 @@
+/* ==========================================================
+   SCALING
+   Everything is sized in rem, and the root font size grows with
+   the screen. The page therefore keeps the same proportions as the
+   ~1200px Figma frame on a laptop and on a 2560px monitor.
+     16px  up to ~1200px wide
+     ~24px at 1920px, ~30px (cap) from ~2400px
+   To make the whole page bigger or smaller, change the 1.1vw value.
+   ========================================================== */
+html {
+    font-size: clamp(16px, calc(1.1vw + 3px), 30px);
+}
+
+:root {
+    --primary: #4b52e8;
+    --primary-dark: #3a40c4;
+    --hero-start: #4d54ea;
+    --hero-end: #2a2b92;
+    --navy: #0c1245;
+    --text: #2b2b3a;
+    --muted: #6c6c7a;
+    --border: #e3e3ea;
+    --field-bg: rgba(255, 255, 255, 0.78);
+    --number-color: #d9ddff;
+    --panel-bg: #edf8fb;
+
+    --font: "Lexend", Arial, Helvetica, sans-serif;
+
+    --container: 62.5rem;
+    --gutter: 1.5rem;
+    --radius-sm: 0.6rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1.4rem;
+}
+
+/* ==========================================================
+   BASE
+   ========================================================== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);
+    color: var(--text);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ol {
+    list-style: none;
+}
+
+:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px var(--primary);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* One container used by every section keeps everything aligned */
+.container {
+    width: min(var(--container), 100% - (var(--gutter) * 2));
+    margin-inline: auto;
+}
+
+/* ==========================================================
+   BUTTONS
+   ========================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.95rem 1.9rem;
+    border: none;
+    border-radius: 0.5rem;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn--primary {
+    background: var(--primary);
+    color: #fff;
+}
+
+.btn--primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn--sm {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.8rem;
+}
+
+/* ==========================================================
+   NAVBAR
+   ========================================================== */
+.navbar {
+    background: #fff;
+}
+
+.navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-block: 0.9rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo img {
+    width: 2rem;
+    height: auto;
+}
+
+.logo-text {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #111;
+}
+
+.logo-z {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.75rem;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    color: var(--text);
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.nav-actions .signin {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #222;
+}
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+.hero {
+    background:
+        url("../images/hero-lines.svg") center / cover no-repeat,
+        linear-gradient(135deg, var(--hero-start), var(--hero-end));
+    padding-block: 5.5rem;
+    /* lets the coins overhang the card without causing a scrollbar */
+    overflow-x: clip;
+}
+
+.hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 25.6rem;
+    gap: 5rem;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 32.5rem;
+}
+
+.hero-content h1 {
+    margin-bottom: 2.5rem;
+    font-size: 2.6rem;
+    font-weight: 500;
+    line-height: 1.12;
+    color: #fff;
+}
+
+.hero-content p {
+    max-width: 31rem;
+    font-size: 1rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.hero-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 2.75rem;
+}
+
+.hero-form input {
+    flex: 1 1 15rem;
+    max-width: 20rem;
+    padding: 1rem 1.25rem;
+    border: none;
+    border-radius: 0.5rem;
+    font: inherit;
+    font-size: 0.9rem;
+}
+
+.hero-form input::placeholder {
+    color: #9a9aaa;
+}
+
+/* ---------- Converter card ---------- */
+.converter {
+    position: relative;
+    padding: 2.4rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Coins overlap the card edges like the design */
+.coin {
+    position: absolute;
+    pointer-events: none;
+}
+
+.coin--btc {
+    top: -2.1rem;
+    right: -2.4rem;
+    width: 6.5rem;
+}
+
+.coin--eth {
+    bottom: 1.75rem;
+    left: -3.9rem;
+    width: 5.5rem;
+}
+
+.converter h2 {
+    margin-bottom: 1.6rem;
+    font-size: 1.35rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.field + .field {
+    margin-top: 1.1rem;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: #fff;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.55rem 0.9rem;
+    background: var(--field-bg);
+    border-radius: var(--radius-md);
+}
+
+.input-row select,
+.input-row input {
+    border: none;
+    background: transparent;
+    font: inherit;
+    font-size: 0.8rem;
+    color: var(--navy);
+}
+
+.input-row select {
+    cursor: pointer;
+}
+
+.input-row input {
+    flex: 1;
+    min-width: 0;
+}
+
+.input-row select:focus-visible,
+.input-row input:focus-visible {
+    outline-offset: 4px;
+}
+
+.currency-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.currency-tabs button {
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: #fff;
+    cursor: pointer;
+}
+
+.currency-tabs button:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================
+   PARTNERS
+   ========================================================== */
+.partners {
+    padding-block: 2.25rem 1.5rem;
+    background: #fff;
+}
+
+.partners img {
+    width: 100%;
+    margin-inline: auto;
+}
+
+/* ==========================================================
+   STATS
+   ========================================================== */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    margin-block: 3rem 3.5rem;
+    padding: 1.75rem 0;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+}
+
+.stat {
+    padding-inline: 1.5rem;
+    text-align: center;
+}
+
+.stat + .stat {
+    border-left: 1px solid var(--border);
+}
+
+.stat h2 {
+    margin-bottom: 0.4rem;
+    font-size: 3.1rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--navy);
+}
+
+.stat p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--muted);
+}
+
+/* ==========================================================
+   TRUSTED PLATFORM
+   Text sits on the same column as everything else; the tinted
+   phones panel runs out to the right edge of the page.
+   ========================================================== */
+.trusted {
+    background: #fff;
+    overflow-x: clip;
+}
+
+.trusted-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 28rem) minmax(0, 1fr);
+    gap: 3.5rem;
+    align-items: start;
+    padding-left: max(var(--gutter), calc((100% - var(--container)) / 2));
+}
+
+.trusted-content {
+    padding-block: 4.5rem;
+}
+
+.trusted-content h2 {
+    margin-bottom: 2.25rem;
+    font-size: 2.9rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--navy);
+}
+
+.feature {
+    display: flex;
+    gap: 1.4rem;
+    padding-block: 1.4rem;
+    border-bottom: 1px solid #ececf2;
+}
+
+.feature:last-child {
+    border-bottom: none;
+}
+
+.number {
+    min-width: 2.5rem;
+    font-size: 1.35rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--number-color);
+}
+
+.feature-details h3 {
+    margin-bottom: 0.4rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--navy);
+}
+
+.feature-details p {
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--muted);
+}
+
+.trusted-image {
+    position: relative;
+    max-width: 40rem;
+}
+
+/* Tinted panel bleeds past the column to the viewport's right edge */
+.trusted-image::before {
+    content: "";
+    position: absolute;
+    inset: 0 -100vmax 0 0;
+    background: var(--panel-bg);
+    z-index: 0;
+}
+
+.trusted-image img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+@media (max-width: 900px) {
+    .hero {
+        padding-block: 3.5rem;
+    }
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.1rem;
+    }
+
+    .converter {
+        max-width: 26rem;
+        margin-inline: 0.75rem;
+    }
+
+    .coin--eth {
+        left: -1.5rem;
+    }
+
+    .trusted-inner {
+        grid-template-columns: 1fr;
+        padding-inline: var(--gutter);
+    }
+
+    .trusted-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .trusted-image {
+        max-width: none;
+    }
+
+    .trusted-image::before {
+        inset: 0 calc(var(--gutter) * -1);
+    }
+}
+
+@media (max-width: 720px) {
+    /* Swap for a hamburger menu when you're ready */
+    .nav-links {
+        display: none;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        padding: 0.5rem 0;
+    }
+
+    .stat {
+        padding: 1.4rem 1.5rem;
+    }
+
+    .stat + .stat {
+        border-left: none;
+        border-top: 1px solid var(--border);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
+
+/* ==========================================================
+   FEATURE CARDS + STEPS
+   Both sit on one lavender band. Big navy card spans two rows
+   on the left; yellow and pink stack on the right.
+   ========================================================== */
+.band {
+    padding-block: 5rem 5.5rem;
+    background: #d6dafc;
+}
+
+.feature-cards {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+}
+
+.fcard {
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.fcard h2 {
+    font-size: 1.9rem;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.fcard p {
+    font-size: 0.8rem;
+    font-weight: 300;
+    line-height: 1.55;
+}
+
+.fcard-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* navy: image on top, text below, spans both rows */
+.fcard--navy {
+    grid-row: 1 / span 2;
+    display: flex;
+    flex-direction: column;
+    padding: 1.4rem;
+    background: #131a50;
+    color: #fff;
+}
+
+.fcard--navy .fcard-image {
+    border-radius: 0.8rem;
+    overflow: hidden;
+    background: #f1f1f1;
+}
+
+.fcard--navy .fcard-text {
+    padding: 2.25rem 0.1rem 0.9rem;
+}
+
+.fcard--navy h2 {
+    margin-bottom: 1rem;
+    font-size: 2.3rem;
+}
+
+.fcard--navy p {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+/* yellow + pink: image left, text right */
+.fcard--yellow,
+.fcard--pink {
+    display: grid;
+    grid-template-columns: 8.5rem 1fr;
+    gap: 1.25rem;
+    align-items: start;
+    padding: 1.1rem;
+}
+
+.fcard--yellow {
+    background: #eadf9f;
+    color: var(--navy);
+}
+
+.fcard--pink {
+    background: #dc9bd6;
+    color: #2a1640;
+}
+
+.fcard--yellow .fcard-image,
+.fcard--pink .fcard-image {
+    border-radius: 0.6rem;
+    overflow: hidden;
+    background: #f1f1f1;
+    aspect-ratio: 1;
+}
+
+.fcard--yellow .fcard-text,
+.fcard--pink .fcard-text {
+    padding-top: 0.2rem;
+}
+
+.fcard--yellow h2,
+.fcard--pink h2 {
+    margin-bottom: 0.6rem;
+}
+
+.fcard--yellow p,
+.fcard--pink p {
+    color: inherit;
+    opacity: 0.85;
+}
+
+/* ---------- Steps ---------- */
+.steps {
+    padding-top: 5.5rem;
+    text-align: center;
+}
+
+.steps h2 {
+    max-width: 16ch;
+    margin-inline: auto;
+    font-size: 2.9rem;
+    font-weight: 500;
+    line-height: 1.12;
+    color: var(--navy);
+}
+
+.steps-intro {
+    margin-top: 1.1rem;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #4a4a68;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 3rem;
+}
+
+.step {
+    padding: 2.25rem 1.5rem 2rem;
+    background: #fff;
+    border-radius: 0.9rem;
+    box-shadow: 0 0 0 1px rgba(75, 82, 232, 0.08);
+}
+
+.step-icon {
+    width: 10rem;
+    height: auto;
+    margin: 0 auto 1.5rem;
+}
+
+.step h3 {
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #2a2a3a;
+}
+
+.step p {
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--muted);
+}
+
+@media (max-width: 900px) {
+    .band {
+        padding-block: 3.5rem;
+    }
+
+    .feature-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .fcard--navy {
+        grid-row: auto;
+    }
+
+    .steps h2 {
+        font-size: 2.2rem;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .fcard--yellow,
+    .fcard--pink {
+        grid-template-columns: 1fr;
+    }
+}

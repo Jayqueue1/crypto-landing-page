@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoZ | Buy, sell, trade and earn cryptocurrencies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container navbar-inner">
+            <a href="#" class="logo" aria-label="CryptoZ home">
+                <img src="images/cryptoz logo.png" alt="">
+                <span class="logo-text">Crypto<span class="logo-z">Z</span></span>
+            </a>
+
+            <nav class="nav-links" aria-label="Main">
+                <a href="#products">Products</a>
+                <a href="#price">Price</a>
+                <a href="#learn">Learn</a>
+                <a href="#support">Support</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="#" class="signin">Sign in</a>
+                <button type="button" class="btn btn--primary btn--sm">Get started</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container hero-inner">
+
+                <div class="hero-content">
+                    <h1>Your all-in-one platform to buy, sell, trade, and earn Cryptocurrencies</h1>
+
+                    <p>Open a free account in minutes right from your phone and make your money go further</p>
+
+                    <form class="hero-form" action="#" method="post">
+                        <label for="hero-email" class="visually-hidden">Email address</label>
+                        <input id="hero-email" type="email" name="email" placeholder="Email Address...." autocomplete="email" required>
+                        <button type="submit" class="btn btn--primary">Get started</button>
+                    </form>
+                </div>
+
+                <div class="converter" id="converter">
+                    <!-- Decorative coins. Export the Ethereum coin from Figma as images/Ethereum.png;
+                         the tag removes itself if the file isn't there yet. -->
+                    <img class="coin coin--btc" src="images/Bitcoin.png" alt="">
+                    <img class="coin coin--eth" src="images/Ethereum.png" alt="" onerror="this.remove()">
+
+                    <h2>Currency Converter</h2>
+
+                    <div class="field">
+                        <label for="amount">Amount</label>
+                        <div class="input-row">
+                            <select id="from-currency" aria-label="Currency to convert from">
+                                <option>GBP</option>
+                                <option>USD</option>
+                                <option>EUR</option>
+                                <option>AUD</option>
+                                <option>BTC</option>
+                            </select>
+                            <input id="amount" type="number" value="1" min="0" step="any">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="converted">Converted to</label>
+                        <div class="input-row">
+                            <select id="to-currency" aria-label="Currency to convert to">
+                                <option>AUD</option>
+                                <option>USD</option>
+                                <option>EUR</option>
+                                <option>GBP</option>
+                                <option>BTC</option>
+                            </select>
+                            <input id="converted" type="text" readonly>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="rate-date">Date</label>
+                        <div class="input-row">
+                            <input id="rate-date" type="date">
+                        </div>
+                    </div>
+
+                    <div class="currency-tabs" role="group" aria-label="Quick select target currency">
+                        <button type="button" data-currency="EUR">EUR</button>
+                        <button type="button" data-currency="GBP">GBP</button>
+                        <button type="button" data-currency="BTC">BTC</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PARTNERS -->
+        <section class="partners">
+            <div class="container">
+                <img src="images/coins.png" alt="Binance, Coinbase, Bitcoin, Tether and BitMEX logos">
+            </div>
+        </section>
+
+        <!-- STATS -->
+        <section class="container">
+            <div class="stats">
+                <div class="stat">
+                    <h2>99k</h2>
+                    <p>People have joined</p>
+                </div>
+                <div class="stat">
+                    <h2>50k</h2>
+                    <p>VVIP users have joined</p>
+                </div>
+                <div class="stat">
+                    <h2>100+</h2>
+                    <p>Big Companies have joined</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRUSTED PLATFORM -->
+        <section class="trusted">
+            <div class="trusted-inner">
+
+                <div class="trusted-content">
+                    <h2>The Most Trusted Cryptocurrency Platform</h2>
+
+                    <ol class="features">
+                        <li class="feature">
+                            <span class="number" aria-hidden="true">01</span>
+                            <div class="feature-details">
+                                <h3>Sync between platforms</h3>
+                                <p>No matter if you're using our web interface or mobile app &mdash; your data is always synced. Just one account for all our services.</p>
+                            </div>
+                        </li>
+
+                        <li class="feature">
+                            <span class="number" aria-hidden="true">02</span>
+                            <div class="feature-details">
+                                <h3>More focus, less clutter</h3>
+                                <p>No ads, just the crypto and content you love.</p>
+                            </div>
+                        </li>
+
+                        <li class="feature">
+                            <span class="number" aria-hidden="true">03</span>
+                            <div class="feature-details">
+                                <h3>Security by default</h3>
+                                <p>Enable privacy mode and app locking to protect your data.</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="trusted-image">
+                    <img src="images/Phones.png" alt="CryptoZ app screens on mobile phones">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FEATURE CARDS + STEPS (shared lavender background) -->
+        <div class="band">
+
+            <section class="container feature-cards" aria-label="Highlights">
+                <article class="fcard fcard--navy">
+                    <div class="fcard-image">
+                        <img src="images/Frame navy.png" alt="Portfolio balance screen">
+                    </div>
+                    <div class="fcard-text">
+                        <h2>Create portfolio today</h2>
+                        <p>Buy and sell popular digital currencies, keep track of them in the one place. Has a variety of features that make it the best place to start trading</p>
+                    </div>
+                </article>
+
+                <!-- The yellow and pink PNGs already contain the phone, title and text,
+                     so they are shown as-is. The alt text carries the same words for screen readers. -->
+                <article class="fcard fcard--yellow">
+                    <img src="images/Frame yellow.png" alt="Lightning-Fast Crypto Trading. The Exchange supports USD, EUR, and GBP. Invest in cryptocurrency slowly over time by scheduling buys daily, weekly, or monthly.">
+                </article>
+
+                <article class="fcard fcard--pink">
+                    <img src="images/Frame pink.png" alt="Security From Day One. Safety, security and compliance. Buy and sell popular digital currencies, keep track of them in one place.">
+                </article>
+            </section>
+
+            <section class="container steps" aria-labelledby="steps-title">
+                <h2 id="steps-title">Get Started in Just Few Minutes</h2>
+                <p class="steps-intro">Has a variety of features that make it the best place to start trading</p>
+
+                <ol class="steps-grid">
+                    <li class="step">
+                        <svg class="step-icon" viewBox="0 0 160 110" aria-hidden="true">
+                            <path d="M34 34 L124 28 L128 74 L38 80 Z" fill="#fff" stroke="#c9c9d6" stroke-width="2"/>
+                            <rect x="30" y="40" width="100" height="56" fill="#fff" stroke="#6b6b7a" stroke-width="2"/>
+                            <rect x="40" y="50" width="80" height="36" fill="#eef0ff"/>
+                            <rect x="53" y="59" width="12" height="14" rx="2" fill="#4b52e8"/>
+                            <circle cx="102" cy="63" r="5" fill="#7b86f5"/>
+                            <path d="M96 78 a6 6 0 0 1 12 0 Z" fill="#7b86f5"/>
+                            <path d="M76 18 l10 -10 l10 10 l-10 6 Z" fill="#7b86f5"/>
+                            <path d="M12 82 l8 -8 l8 8 l-8 8 Z" fill="#7b86f5"/>
+                        </svg>
+                        <h3>Sign Up</h3>
+                        <p>Buy Bitcoin or Ethereum, then securely store it in your wallet or send it easily to friends</p>
+                    </li>
+
+                    <li class="step">
+                        <svg class="step-icon" viewBox="0 0 160 110" aria-hidden="true">
+                            <rect x="56" y="4" width="48" height="100" rx="9" fill="#fff" stroke="#111" stroke-width="3"/>
+                            <circle cx="68" cy="22" r="6" fill="#eceef8"/>
+                            <rect x="78" y="19" width="16" height="6" rx="3" fill="#eceef8"/>
+                            <circle cx="68" cy="84" r="6" fill="#eceef8"/>
+                            <rect x="78" y="81" width="16" height="6" rx="3" fill="#eceef8"/>
+                            <path d="M52 22 a22 22 0 0 0 4 30 l0 -30 Z" fill="#7b86f5"/>
+                            <rect x="38" y="46" width="84" height="22" fill="#fff" stroke="#c9c9d6" stroke-width="2"/>
+                            <circle cx="50" cy="57" r="6" fill="#f2b84b"/>
+                            <rect x="62" y="53" width="22" height="3.5" rx="1.7" fill="#4b52e8"/>
+                            <rect x="62" y="60" width="36" height="3.5" rx="1.7" fill="#c9c9d6"/>
+                            <path d="M112 96 c10 -6 18 -20 14 -34 c-8 10 -14 18 -14 34 Z" fill="#7b86f5"/>
+                        </svg>
+                        <h3>Fund</h3>
+                        <p>Choose your preferred payment method, such as bank transfer or credit card, to top up your wallet</p>
+                    </li>
+
+                    <li class="step">
+                        <svg class="step-icon" viewBox="0 0 160 110" aria-hidden="true">
+                            <rect x="44" y="46" width="72" height="60" fill="#fff" stroke="#6b6b7a" stroke-width="2"/>
+                            <rect x="38" y="36" width="84" height="12" fill="#fff" stroke="#6b6b7a" stroke-width="2"/>
+                            <rect x="73" y="36" width="14" height="70" fill="#7b86f5"/>
+                            <path d="M80 36 C60 36 62 8 80 22 C98 8 100 36 80 36 Z" fill="#7b86f5"/>
+                            <circle cx="80" cy="76" r="16" fill="#f2b84b"/>
+                            <text x="80" y="83" text-anchor="middle" font-size="20" font-weight="700" fill="#fff" font-family="Arial, sans-serif">$</text>
+                        </svg>
+                        <h3>Buy Crypto</h3>
+                        <p>Sign up for a free wallet on web, iOS or Android and follow our easy process to set up your profile</p>
+                    </li>
+                </ol>
+            </section>
+
+        </div>
+
+    </main>
+
+    <script>
+        /* Converter demo.
+           These rates are PLACEHOLDERS (units per 1 USD) so the widget works offline.
+           Replace the RATES lookup with a real exchange-rate API for live/historical data. */
+        const RATES = { USD: 1, GBP: 0.76, EUR: 0.86, AUD: 1.53, BTC: 0.000011 };
+
+        const amountEl = document.getElementById('amount');
+        const fromEl = document.getElementById('from-currency');
+        const toEl = document.getElementById('to-currency');
+        const outEl = document.getElementById('converted');
+        const dateEl = document.getElementById('rate-date');
+
+        dateEl.value = new Date().toISOString().slice(0, 10);
+
+        function convert() {
+            const amount = parseFloat(amountEl.value);
+            if (Number.isNaN(amount)) { outEl.value = ''; return; }
+
+            const result = (amount / RATES[fromEl.value]) * RATES[toEl.value];
+
+            outEl.value = result.toLocaleString(undefined, {
+                maximumFractionDigits: toEl.value === 'BTC' ? 8 : 4
+            });
+        }
+
+        [amountEl, fromEl, toEl].forEach(el => el.addEventListener('input', convert));
+
+        document.querySelectorAll('.currency-tabs button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                toEl.value = btn.dataset.currency;
+                convert();
+            });
+        });
+
+        convert();
+    </script>
+</body>
+</html>
